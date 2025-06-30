@@ -2,16 +2,6 @@
 
 A real-time collaborative commenting platform built with Next.js 14+ App Router, TypeScript, and modern web technologies.
 
-## Features
-
-- 🔐 **Session-based Authentication** - Secure login/register with session cookies
-- 💬 **Real-time Comments** - Live collaborative commenting system
-- 👥 **Live Typing Indicators** - See who's typing in real-time
-- 📊 **Character Count Tracking** - Track character count per user
-- 🎨 **Modern UI** - Beautiful interface with Tailwind CSS and shadcn/ui
-- ⚡ **Real-time Updates** - WebSocket-powered live updates
-- 📱 **Responsive Design** - Works on all devices
-
 ## Tech Stack
 
 - **Framework**: Next.js 14+ (App Router)
@@ -21,7 +11,7 @@ A real-time collaborative commenting platform built with Next.js 14+ App Router,
 - **State Management**: Jotai
 - **Data Fetching**: TanStack Query (React Query)
 - **Forms**: React Hook Form + Zod validation
-- **Notifications**: Sonner
+- **Notifications**: Sonner (currently not using it)
 - **Real-time**: Socket.IO Client
 - **Icons**: Lucide React
 
@@ -46,9 +36,9 @@ A real-time collaborative commenting platform built with Next.js 14+ App Router,
    npm install
    ```
 
-4. Copy the environment file:
+4. environment file:
    ```bash
-   cp env.example .env.local
+   .env file
    ```
 
 5. Update the environment variables in `.env.local`:
@@ -64,31 +54,7 @@ A real-time collaborative commenting platform built with Next.js 14+ App Router,
 
 7. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Project Structure
 
-```
-src/
-├── app/                    # Next.js App Router pages
-│   ├── (auth)/            # Authentication routes
-│   │   ├── login/         # Login page
-│   │   └── register/      # Register page
-│   ├── comments/          # Main comments page
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Landing page
-├── components/            # React components
-│   ├── ui/               # shadcn/ui components
-│   ├── forms/            # Form components
-│   ├── comments/         # Comment-related components
-│   └── presence/         # Typing indicators
-├── hooks/                # Custom React hooks
-├── lib/                  # Utility functions
-│   ├── api.ts           # API client
-│   ├── validation.ts    # Zod schemas
-│   └── utils.ts         # Utility functions
-└── store/               # Jotai state management
-    ├── auth.ts          # Authentication state
-    └── comments.ts      # Comments state
-```
 
 ## Key Components
 
@@ -139,4 +105,4 @@ The frontend communicates with the backend through:
 
 ## License
 
-This project is part of a fullstack evaluation test.
+
