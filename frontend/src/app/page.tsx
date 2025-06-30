@@ -2,11 +2,11 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { useAtomValue } from 'jotai'
 import { isAuthenticatedAtom } from '@/store/auth'
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { FaComments } from 'react-icons/fa'
 
 export default function HomePage() {
   const isAuthenticated = useAtomValue(isAuthenticatedAtom)
@@ -21,67 +21,35 @@ export default function HomePage() {
   if (isAuthenticated) return null
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="mb-8">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-            Collaborative Comment System
+    <div className="relative min-h-screen bg-gradient-to-br from-[#18122B] via-[#393053] to-[#635985] flex flex-col overflow-hidden">
+      {/* Blue glow accents */}
+      <div className="absolute top-[-60px] left-[-60px] w-60 h-60 bg-blue-400 opacity-20 rounded-full blur-3xl z-0" />
+      <div className="absolute bottom-[-80px] right-[-40px] w-80 h-80 bg-blue-300 opacity-10 rounded-full blur-3xl z-0" />
+      {/* Header with Login/Register */}
+      <header className="w-full flex justify-end items-center p-4 gap-2 z-10 relative">
+        <Link href="/login">
+          <Button size="sm" className="font-semibold bg-gradient-to-r from-blue-400 to-blue-300 text-gray-900 border-0 shadow-md hover:from-blue-300 hover:to-blue-400">
+            Login
+          </Button>
+        </Link>
+        <Link href="/register">
+          <Button size="sm" variant="outline" className="font-semibold border-blue-400 text-blue-300 hover:bg-blue-400/10">
+            Create Account
+          </Button>
+        </Link>
+      </header>
+      {/* Luxurious Hero Card */}
+      <main className="flex-1 flex flex-col items-center justify-center px-4 z-10 relative">
+        <div className="backdrop-blur-2xl bg-white/10 border border-blue-400/30 rounded-3xl shadow-2xl p-10 md:p-16 flex flex-col items-center max-w-lg w-full mx-auto" style={{boxShadow: '0 8px 32px 0 rgba(59, 130, 246, 0.25)'}}>
+          <span className="text-7xl md:text-8xl text-blue-400 mb-4 drop-shadow-lg"><FaComments /></span>
+          <h1 className="text-5xl md:text-6xl font-extrabold text-blue-300 mb-2 text-center tracking-tight drop-shadow-lg" style={{fontFamily: 'serif, Georgia, Times'}}>
+            CoCo
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Real-time collaborative commenting platform with live typing indicators, 
-            character counts, and seamless user experience.
+          <p className="text-lg md:text-xl text-blue-100 text-center max-w-lg mb-6 font-medium">
+            Go Ahead and Make a Comment...
           </p>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <Card>
-            <CardHeader>
-              <CardTitle>Real-time Collaboration</CardTitle>
-              <CardDescription>
-                See who's typing in real-time with live character counts
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="text-left space-y-2 text-gray-600">
-                <li>• Live typing indicators</li>
-                <li>• Character count tracking</li>
-                <li>• Instant message updates</li>
-                <li>• User presence detection</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Secure Authentication</CardTitle>
-              <CardDescription>
-                Session-based authentication with secure cookies
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="text-left space-y-2 text-gray-600">
-                <li>• Session-based auth</li>
-                <li>• CSRF protection</li>
-                <li>• Secure password hashing</li>
-                <li>• Redis session storage</li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="space-x-4">
-          <Link href="/login">
-            <Button size="lg" className="px-8">
-              Get Started - Login
-            </Button>
-          </Link>
-          <Link href="/register">
-            <Button size="lg" variant="outline" className="px-8">
-              Create Account
-            </Button>
-          </Link>
-        </div>
-      </div>
+      </main>
     </div>
   )
 }
