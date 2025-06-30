@@ -26,11 +26,11 @@ flowchart TD
 
 
 **List security precautions**
-```1. Session-Based Authentication with Secure Cookies
-   2. Password Hashing
-   3. CSRF Protection
-   4. Environment Variable Management
-   5. CORS Policy```
+1. Session-Based Authentication with Secure Cookies
+2. Password Hashing
+3. CSRF Protection
+4. Environment Variable Management
+5. CORS Policy
 
 
 **To scale the collaborative comment system to 10K+ users, the following actions are critical**
