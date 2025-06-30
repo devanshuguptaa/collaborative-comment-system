@@ -8,6 +8,7 @@ import { format, formatDistanceToNow, differenceInMinutes } from 'date-fns'
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { CommentForm } from './comment-form'
+import { getUsernameColor } from '@/lib/utils'
 
 function CommentItem({ comment, allComments, depth = 0 }: { comment: any, allComments: any[], depth?: number }) {
   const [showReply, setShowReply] = useState(false)
@@ -28,7 +29,7 @@ function CommentItem({ comment, allComments, depth = 0 }: { comment: any, allCom
         </div>
         <div className="flex-1">
           <div className="flex items-center space-x-2">
-            <span className="font-semibold text-gray-900">{comment.userName}</span>
+            <span className={`font-semibold ${getUsernameColor(comment.userName)}`}>{comment.userName}</span>
             <span className="text-xs text-gray-500">
               {minutesAgo < 60
                 ? `${formatDistanceToNow(createdAt, { addSuffix: true })} • ${format(createdAt, 'yyyy-MM-dd HH:mm')}`
