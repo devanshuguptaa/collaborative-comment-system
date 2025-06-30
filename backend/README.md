@@ -2,15 +2,6 @@
 
 Express.js + TypeScript backend for the real-time collaborative commenting platform.
 
-## Features
-
-- 🔐 **Session-based Authentication** - Secure login/register with Redis sessions
-- 💬 **Comments API** - Create and retrieve comments with caching
-- ⚡ **Real-time Updates** - WebSocket for live typing indicators and comment updates
-- 🗄️ **PostgreSQL** - Reliable data storage
-- 🚀 **Redis** - Session storage and caching
-- 🛡️ **Security** - CORS, Helmet, rate limiting
-
 ## Tech Stack
 
 - **Runtime**: Node.js with TypeScript
@@ -34,9 +25,9 @@ Express.js + TypeScript backend for the real-time collaborative commenting platf
    npm install
    ```
 
-2. Copy environment file:
-   ```bash
-   cp env.example .env
+2. environment file:
+   ```
+  .env
    ```
 
 3. Start PostgreSQL and Redis with Docker:
